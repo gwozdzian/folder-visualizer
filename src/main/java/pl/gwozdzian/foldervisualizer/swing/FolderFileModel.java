@@ -294,6 +294,7 @@ public class FolderFileModel {
     
     
     public static long size(File file) {
+        CodeStopwatch.start("size("+file.getName()+")");
             long size=0;
             if(file!=null && file.exists()) {
                     if(file.canRead()) {
@@ -312,6 +313,7 @@ public class FolderFileModel {
                             }
                     }
             }
+            CodeStopwatch.stop("size("+file.getName()+")");
             return size;
     }
 

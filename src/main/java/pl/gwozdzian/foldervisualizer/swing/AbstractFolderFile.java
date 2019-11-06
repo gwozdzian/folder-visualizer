@@ -142,8 +142,8 @@ public abstract class AbstractFolderFile extends JComponent implements ScaleChan
         CodeStopwatch.start(this.getName()+" scaleChanged()");
         
         
-        this.setVisible(this.getWidth()>10);
-
+        //this.setVisible(this.getWidth()>5);
+        
         
         
         //Tools.trace(this, model.getSimpleName()+" pack(), invalidate(), repaint()");
@@ -181,25 +181,25 @@ public abstract class AbstractFolderFile extends JComponent implements ScaleChan
     
     @Override
     public void revalidate() {
-        Tools.trace(this.model.getSimpleName()+" - "+Tools.getMethodName());
+        //Tools.trace(this.model.getSimpleName()+" - "+Tools.getMethodName());
         super.revalidate(); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void paint(Graphics g) {
-        Tools.trace(this.model.getSimpleName()+" - "+Tools.getMethodName());
+        //Tools.trace(this.model.getSimpleName()+" - "+Tools.getMethodName());
         super.paint(g); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void invalidate() {
-        Tools.trace(this.model.getSimpleName()+" - "+Tools.getMethodName());
+        //Tools.trace(this.model.getSimpleName()+" - "+Tools.getMethodName());
         super.invalidate(); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void repaint() {
-        Tools.trace(this.model.getSimpleName()+" - "+Tools.getMethodName());
+        //Tools.trace(this.model.getSimpleName()+" - "+Tools.getMethodName());
         super.repaint(); //To change body of generated methods, choose Tools | Templates.
     }
 

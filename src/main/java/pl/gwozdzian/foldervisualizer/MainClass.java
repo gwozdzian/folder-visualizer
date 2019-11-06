@@ -43,6 +43,7 @@ public class MainClass extends JFrame{
     protected FolderFile jFolder = null;
     protected JScrollPane stopwatchPane;
     private JCodeStopwatchComponent stopwatchComponent = null;
+    private File recentFolder = new File("C:\\FOTO - storage");
 
     public MainClass() {
         
@@ -124,7 +125,7 @@ public class MainClass extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(jFolder != null){
-                    jFolder.setScaleToSize(600);
+                    jFolder.setScaleToSize(1000);
                 }
                 
             }
@@ -311,7 +312,7 @@ public class MainClass extends JFrame{
         scroolPane.getViewport().removeAll();
         jFolder = FolderFile.createFolderFile(file, null, true);
         scroolPane.getViewport().add(jFolder);
-        jFolder.setScaleToSize(800);
+        //jFolder.setScaleToSize(1000);
         SwingUtilities.getWindowAncestor(scroolPane).pack();
         CodeStopwatch.stop();
     }
@@ -321,7 +322,7 @@ public class MainClass extends JFrame{
          JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
          jfc.setDialogTitle("Choose a directory to save your file: ");
          jfc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-         jfc.setCurrentDirectory(new File("/User/alvinreyes"));
+         jfc.setCurrentDirectory(recentFolder);
 
         //int result = jFileChooser.showOpenDialog(new JFrame());
 
@@ -329,7 +330,9 @@ public class MainClass extends JFrame{
          int returnValue = jfc.showOpenDialog(new JFrame());
          if (returnValue == JFileChooser.APPROVE_OPTION) {
              if (jfc.getSelectedFile().isDirectory()) {
+                 recentFolder = jfc.getSelectedFile();
                  loadFolderFile(jfc.getSelectedFile());
+                 
              }
          }
      }

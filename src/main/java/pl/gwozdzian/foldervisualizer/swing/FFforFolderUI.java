@@ -79,7 +79,7 @@ public class FFforFolderUI extends FolderFileUI{
     
     @Override
     public void paint(Graphics g, JComponent c) {
-        Tools.trace(Tools.getMethodName());
+        //Tools.trace(Tools.getMethodName());
         FolderFile ff = (FolderFile) c;
         FolderFileModel model = ff.getModel();
         
